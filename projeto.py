@@ -68,13 +68,10 @@ def abrir_calculadora():
     
         z1 = float(dentesEngr1.get()) 
         m1 = float(moduloEngr1.get())  
-        ap1 = float(pressaoEngr1.get())
         ah1  = float(heliceEngr1.get())
         
         z2 = float(dentesEngr2.get())  
         m2 = float(moduloEngr2.get())
-        ap2 = float(pressaoEngr2.get())
-        ah2 =  float(heliceEngr2.get())
 
         ah_rad = math.radians(ah1)
         resultado = 0
@@ -219,28 +216,14 @@ def botaoClique():
     
         # calculos retos
         
-        # passo 
         p = modulo * math.pi
-        #diametro primitivo
         dp = modulo * numeroDentes
-        # altura do dente
         alturaDente = 2.2 * modulo
-        # altura da cabeca
         a = modulo
-        # altura do pe
         alturaPe = 1.2 * modulo
-        # folga da cabeca
         folga = 0.2 * modulo
-        
-        # vao entre dentes no dp
-        # vaoDentesdp = p / 2
         vaoDentesdp = (math.pi * 2) / 2
-        
-        # espessuraDp
         espessuraDp = (math.pi * modulo) / 2
-
-        # medida sobre dentes
-        #medidaSobreDentes = math.pi * modulo / 2
 
         if combo_var2.get() == 'Espessura no DP (T)':
             resultado = espessuraDp
@@ -271,14 +254,11 @@ def botaoClique():
     else:
 
          # calculos helicoidais
+
         p = modulo * math.pi
         passoAparente = ( modulo * math.pi / math.cos(angulo_helice_rad))
-        #espessuraNormal = p /  2
-        
         espessuraNormal = (math.pi * modulo) / 2
-        #espessuraFrontal = passoAparente / 2
         espessuraFrontal = passoAparente / 2 
-       
         moduloAparente = modulo / math.cos(angulo_helice_rad)
         diametroPrimitivo = moduloAparente * numeroDentes
         alturadoDente = 2.2 * modulo
@@ -348,17 +328,17 @@ def atualizar_opcoes_combobox2(event=None):
                         'Diâmetro externo (de)', 'Diâmetro base (db)','Ângulo de pressão apar.','Medida sobre dentes (m)']
 
     else:
-        novas_opcoes = []  # Caso contrário, não há novas opções
+        novas_opcoes = [] 
     
-    # Definir novas opções para o segundo combobox
+    
     combo_box2['values'] = novas_opcoes
     return valor_selecionado
 
 
 #### JANELA PRINCIPAL ####
 window = Tk()
-combo_var1 = tk.StringVar() # combobox 1
-combo_var2 = tk.StringVar() # combobox 2
+combo_var1 = tk.StringVar() 
+combo_var2 = tk.StringVar() 
 
 window.geometry("882x555")
 window.configure(bg = "#ffffff")
@@ -384,7 +364,7 @@ entry0_bg = canvas.create_image(
     image = entry0_img)
 
 
-# Area de texto / exibe resultado
+
 entry0 = Text(
     bd = 0,
     bg = "#ededed",
