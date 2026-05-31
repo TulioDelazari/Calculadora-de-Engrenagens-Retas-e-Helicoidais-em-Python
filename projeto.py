@@ -237,7 +237,7 @@ def botaoClique():
         vaoDentesdp = (math.pi * 2) / 2
         
         # espessuraDp
-        espessuraDp = (math.pi * 2) / 2
+        espessuraDp = (math.pi * modulo) / 2
 
         # medida sobre dentes
         #medidaSobreDentes = math.pi * modulo / 2
@@ -249,7 +249,7 @@ def botaoClique():
         elif combo_var2.get() == 'Passo (P)':
             resultado = p
         elif combo_var2.get() == 'Diâmetro de Base (DB)':
-            resultado = dp * (math.cos(angulo_helice_rad))
+            resultado = dp * math.cos(angulo_pressao_rad)
         elif combo_var2.get() == "Vão entre dentes no dp (TS)":
             resultado = vaoDentesdp
         elif combo_var2.get() == "Altura do dente (H)":
@@ -266,8 +266,7 @@ def botaoClique():
             resultado = alturaPe
         elif combo_var2.get() == "Folga da Cabeça (F)":
             resultado = folga
-        #elif combo_var2.get() == 'Medida sobre dentes (M)':
-        #    resultado = 0
+       
 
     else:
 
@@ -276,7 +275,7 @@ def botaoClique():
         passoAparente = ( modulo * math.pi / math.cos(angulo_helice_rad))
         #espessuraNormal = p /  2
         
-        espessuraNormal = modulo * math.cos(angulo_helice_rad)
+        espessuraNormal = (math.pi * modulo) / 2
         #espessuraFrontal = passoAparente / 2
         espessuraFrontal = passoAparente / 2 
        
@@ -286,7 +285,7 @@ def botaoClique():
         alturaCabeca = modulo
         alturaPe = 1.2 * modulo
         folga = 0.2 * modulo
-        diametroBase = (diametroPrimitivo * math.cos(angulo_pressao_rad)) / math.cos(angulo_helice_rad)
+        diametroBase = (diametroPrimitivo * math.cos(angulo_pressao_rad))
 
         if combo_var2.get() == 'Espessura Normal (t)':
             resultado = espessuraNormal
@@ -307,7 +306,7 @@ def botaoClique():
         elif combo_var2.get() == 'Folga da cabeça (f)':
             resultado = folga
         elif combo_var2.get() == 'Passo helicoidal (ph)':
-            resultado =  modulo / math.cos(angulo_helice_rad)
+            resultado =   (math.pi * modulo) / math.sin(angulo_helice_rad)
         elif combo_var2.get() =="Diâmetro Primitivo (dp)":
             resultado = diametroPrimitivo
         elif combo_var2.get() == 'Diâmetro interno (di)':
